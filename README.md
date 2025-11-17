@@ -1,4 +1,4 @@
-# 🏎️ Performance & Chrome: Venta y Personalización de Piezas de Alto Nivel
+# 🏎️ Hudson Hornet: Venta y Personalización de Piezas de Alto Nivel
 
 Este repositorio contiene los archivos finales para la página web de una empresa especializada en la venta de piezas de coche de alto rendimiento y servicios de personalización.
 
