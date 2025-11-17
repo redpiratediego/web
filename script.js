@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. EFECTO DE HOVER EN EL LOGO (Detalle de elegancia)
     // ----------------------------------------------------
     const logo = document.querySelector('.logo');
-    const originalText = "PERFORMANCE & CHROME";
-    const hoverText = "P & C";
+    const originalText = "Hudson Hornet";
+    const hoverText = "H H";
 
     if (logo) {
         logo.addEventListener('mouseover', () => {
@@ -47,5 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
             logo.textContent = originalText; 
         });
     }
+
 
 });
