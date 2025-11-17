@@ -1,0 +1,333 @@
+/* ======================================================= */
+/* 1. VARIABLES DE COLOR Y RESET BÁSICO */
+/* ======================================================= */
+:root {
+    --gris-antracita: #1a1a1a; /* Base Oscura, casi negro */
+    --gris-oscuro: #2c3e50;    /* Texto principal y fondos oscuros */
+    --gris-medio: #7f8c8d;     /* Texto secundario y bordes */
+    --gris-claro: #ecf0f1;     /* Fondos de secciones claras */
+    --blanco-puro: #ffffff;    /* Texto en oscuro */
+
+    /* Acento Plateado Metálico / Cromo */
+    --acento-plateado: #c9d6de;
+    --acento-plateado-shadow: rgba(201, 214, 222, 0.4); 
+
+    /* Color de Énfasis (sutil toque de rendimiento) */
+    --acento-rojo: #a30000;
+}
+
+/* Base Mobile-First */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: var(--gris-oscuro);
+    background-color: var(--blanco-puro);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: var(--acento-plateado);
+}
+
+/* ======================================================= */
+/* 2. ESTRUCTURA Y TIPOGRAFÍA */
+/* ======================================================= */
+
+.container {
+    width: 90%; 
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Títulos basados en Oswald para un look audaz */
+h1, h2 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; margin-bottom: 0.5em; }
+h2 { font-size: 1.8rem; margin-bottom: 1em; }
+
+/* Efecto Cromo/Plateado para Titulares y Logotipo */
+.acento-cromo {
+    color: var(--acento-plateado);
+    text-shadow: 0 0 8px var(--acento-plateado-shadow);
+}
+
+/* Secciones */
+.section-dark {
+    background-color: var(--gris-antracita);
+    color: var(--blanco-puro);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section-light {
+    background-color: var(--gris-claro);
+    color: var(--gris-oscuro);
+    padding: 60px 0;
+    text-align: center;
+}
+
+/* ======================================================= */
+/* 3. HEADER Y NAVEGACIÓN (MOBILE) */
+/* ======================================================= */
+
+.main-header {
+    background-color: var(--gris-antracita);
+    padding: 15px 0;
+    border-bottom: 2px solid var(--acento-plateado);
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    cursor: pointer; /* Para el efecto hover de JS */
+    transition: color 0.3s ease;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column; /* Items de menú apilados en móvil */
+}
+
+.main-nav ul li a {
+    display: block;
+    padding: 8px 15px;
+    color: var(--acento-plateado);
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: var(--blanco-puro);
+    background-color: var(--gris-oscuro);
+}
+
+/* ======================================================= */
+/* 4. BOTONES (CTA) */
+/* ======================================================= */
+
+.cta-button {
+    padding: 15px 30px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 20px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.cta-button-performance {
+    background: linear-gradient(145deg, #a7b7c2, #c9d6de); 
+    color: var(--gris-antracita);
+    border: 2px solid var(--blanco-puro);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button-performance:hover {
+    background: linear-gradient(145deg, #c9d6de, #a7b7c2);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7);
+}
+
+.cta-small { 
+    background-color: var(--gris-antracita);
+    color: var(--acento-plateado);
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid var(--acento-plateado);
+}
+.cta-small:hover {
+    background-color: var(--acento-rojo); 
+    color: var(--blanco-puro);
+    border-color: var(--acento-rojo);
+}
+
+/* ======================================================= */
+/* 5. GRID DE CATEGORÍAS (MOBILE) */
+/* ======================================================= */
+
+.category-grid {
+    display: flex;
+    flex-direction: column; 
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.category-card {
+    background-color: var(--blanco-puro);
+    border: 1px solid var(--gris-medio);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border-color: var(--acento-plateado);
+}
+
+.category-card h3 {
+    color: var(--gris-oscuro);
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.category-card .icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.project-placeholder {
+    height: 250px;
+    background-color: var(--gris-oscuro);
+    border: 3px solid var(--acento-plateado);
+    margin: 30px auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gris-medio);
+    font-style: italic;
+}
+
+/* ======================================================= */
+/* 6. FOOTER */
+/* ======================================================= */
+
+.main-footer {
+    padding: 40px 0 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-info p {
+    margin: 5px 0;
+    color: var(--gris-medio);
+}
+
+.social-icons {
+    font-size: 1.5rem;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: var(--gris-medio);
+    margin-top: 20px;
+}
+
+/* ======================================================= */
+/* 7. MEDIA QUERIES (RESPONSIVIDAD) */
+/* ======================================================= */
+
+/* --- Tabletas y Escritorio Pequeño (min-width: 768px) --- */
+@media (min-width: 768px) {
+    .container {
+        width: 85%;
+    }
+
+    h1 { font-size: 3.5rem; }
+    h2 { font-size: 2.5rem; }
+
+    /* Navegación - Horizontal */
+    .header-content {
+        flex-direction: row; 
+        justify-content: space-between;
+    }
+    
+    .logo {
+        margin-bottom: 0;
+    }
+
+    .main-nav ul {
+        flex-direction: row; 
+    }
+
+    /* Footer - Horizontal */
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Grid de Categorías - 2 Columnas */
+    .category-grid {
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: space-between;
+    }
+
+    .category-card {
+        flex: 1 1 calc(50% - 15px); 
+        max-width: calc(50% - 15px);
+    }
+}
+
+/* --- Escritorio Grande (min-width: 1024px) --- */
+@media (min-width: 1024px) {
+    .container {
+        width: 80%;
+        max-width: 1200px;
+    }
+    
+    h1 { font-size: 4.5rem; }
+
+    /* Grid de Categorías - 3 Columnas */
+    .category-card {
+        flex: 1 1 calc(33.333% - 20px); 
+        max-width: calc(33.333% - 20px);
+    }
+}
+
+/* ======================================================= */
+/* 8. ANIMACIÓN ON SCROLL (Controlado por script.js) */
+/* ======================================================= */
+
+/* Estado inicial: Elementos listos para animar, invisibles y ligeramente desplazados */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px); /* Un desplazamiento sutil */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Estado final: El elemento es visible y vuelve a su posición original */
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
